@@ -1,18 +1,21 @@
 // Having deciphered the message and knowing what she is planning to steal we need to figure who is helping her
 
-
 // Criminals all have a wanted number and she will most likely work with the one with the highest wanted level
 // Given two numbers, write a function that will return  the larger number
 
 function largerNum(num1, num2) {
   // TODO YOUR CODE HERE
+  if (num1 > num2) {
+    return num1;
+  } else {
+    return num2;
+  }
 }
-
 
 // We also need to know how successful the criminals have been by grading their number of successes
 // Given two numbers, amount successful and total heists, return the corresponding letter grade on percentage that were successful.
 // 90 to 100 = "A", 80 to 89 = "B", 70 to 79 = "C", 60 to 69 = "D", 59 and under = "F"
-// Example: 
+// Example:
 // input: 23, 25
 // output: "A"
 // Example:
@@ -21,8 +24,20 @@ function largerNum(num1, num2) {
 
 function crimeGrader(successful, total) {
   // TODO YOUR CODE HERE
+  let crimeTotal = (successful / total) * 100;
+  switch (true) {
+    case crimeTotal <= 59:
+      return "F";
+    case crimeTotal <= 69:
+      return "D";
+    case crimeTotal <= 79:
+      return "C";
+    case crimeTotal <= 89:
+      return "B";
+    default:
+      return "A";
+  }
 }
-
 
 // To help us better catch the associate we need to know when they are most active.
 // Given an integer that represents an hour in the day (1 - 24), write a function that returns "morning", "afternoon", "evening", or "night" based off of what hour it is. You'll need to think in military time.
@@ -33,6 +48,18 @@ function crimeGrader(successful, total) {
 //   Make sure your ranges are inclusive
 function timeOfDay(hour) {
   // TODO YOUR CODE HERE
+  switch (true) {
+    case hour >= 22:
+      return "night";
+    case hour >= 18:
+      return "evening";
+    case hour >= 12:
+      return "afternoon";
+    case hour >= 5:
+      return "morning";
+    default:
+      return "night";
+  }
 }
 
 // Our surveillance team finds the closer we get to catching the associate the hotter the person gets, we can use this to narrow down the person
@@ -51,11 +78,11 @@ let exampleCar = {
   make: "Ford",
   model: "Mustang",
   color: "Red",
-  moving: false
-}
+  moving: false,
+};
 
 function isStopped(car) {
-  // TODO YOUR CODE HERE  
+  // TODO YOUR CODE HERE
 }
 
 // We have found everything we need to capture the associate, to make sure they don't elude us we want to make sure we only capture them when they are at home and their asleep.
@@ -65,8 +92,8 @@ function isStopped(car) {
 // example of suspect object passed in
 let suspect = {
   atHome: true,
-  asleep: true
-}
+  asleep: true,
+};
 
 function attemptCapture(suspect) {
   // TODO YOUR CODE HERE
