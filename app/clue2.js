@@ -46,6 +46,7 @@ function crimeGrader(successful, total) {
 //   evening is between 6pm and 9pm (18 - 21)
 //   night is between 10pm and 4am (22 -24 and 1 - 4)
 //   Make sure your ranges are inclusive
+
 function timeOfDay(hour) {
   // TODO YOUR CODE HERE
   switch (true) {
@@ -67,6 +68,14 @@ function timeOfDay(hour) {
 // Write a function that will take in a number and return 'suspicious' if it indicates the person is over 98.6° and if the person is at or above 103° 'very suspicious', if it is under return 'not suspicious', (hint: try this with string concatenation)
 function isSuspicious(temp) {
   // TODO YOUR CODE HERE
+  switch (true) {
+    case temp <= 98.6:
+      return "not suspicious";
+    case temp < 103:
+      return "suspicious";
+    default:
+      return "very suspicious";
+  }
 }
 
 // We think we might have found the associate, and have added a tracker to their car, to find where the associate is hiding we need to know when their car is stopped
