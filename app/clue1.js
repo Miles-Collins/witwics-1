@@ -4,7 +4,11 @@
 // Ex: ('Cryptology', 3) should return 'p'
 function letterAtPosition(str, position) {
   // TODO YOUR CODE HERE
+
   return str[position];
+
+  // let myString = str.split("")
+  // myString[position].toUpperCase()
 }
 
 // It has also been discovered some of the words have been seperated and need to be joined back together, sometimes with an extra seperator, if one is not provided assume that it will be an empty space
@@ -12,7 +16,6 @@ function letterAtPosition(str, position) {
 // Write a function that will join two strings with an optional seperating character
 function concat(str1, str2, seperator = " ") {
   // TODO YOUR CODE HERE
-
   return str1 + seperator + str2;
 }
 

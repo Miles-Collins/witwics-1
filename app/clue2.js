@@ -24,15 +24,15 @@ function largerNum(num1, num2) {
 
 function crimeGrader(successful, total) {
   // TODO YOUR CODE HERE
-  let crimeTotal = (successful / total) * 100;
+  let averageScore = (successful / total) * 100;
   switch (true) {
-    case crimeTotal <= 59:
+    case averageScore <= 59:
       return "F";
-    case crimeTotal <= 69:
+    case averageScore <= 69:
       return "D";
-    case crimeTotal <= 79:
+    case averageScore <= 79:
       return "C";
-    case crimeTotal <= 89:
+    case averageScore <= 89:
       return "B";
     default:
       return "A";
@@ -50,16 +50,14 @@ function crimeGrader(successful, total) {
 function timeOfDay(hour) {
   // TODO YOUR CODE HERE
   switch (true) {
-    case hour >= 22:
+    case (hour >= 1 && hour <= 4) || hour >= 22:
       return "night";
-    case hour >= 18:
-      return "evening";
-    case hour >= 12:
-      return "afternoon";
-    case hour >= 5:
+    case hour <= 11:
       return "morning";
+    case hour <= 17:
+      return "afternoon";
     default:
-      return "night";
+      return "evening";
   }
 }
 
@@ -68,13 +66,12 @@ function timeOfDay(hour) {
 // Write a function that will take in a number and return 'suspicious' if it indicates the person is over 98.6° and if the person is at or above 103° 'very suspicious', if it is under return 'not suspicious', (hint: try this with string concatenation)
 function isSuspicious(temp) {
   // TODO YOUR CODE HERE
-  switch (true) {
-    case temp <= 98.6:
-      return "not suspicious";
-    case temp < 103:
-      return "suspicious";
-    default:
-      return "very suspicious";
+  if (temp <= 98.6) {
+    return "not suspicious";
+  } else if (temp < 103) {
+    return "suspicious";
+  } else {
+    return "very suspicious";
   }
 }
 
@@ -84,14 +81,19 @@ function isSuspicious(temp) {
 
 // example of car object passed in
 let exampleCar = {
-  make: "Ford",
-  model: "Mustang",
-  color: "Red",
+  make: "Toyota",
+  model: "Supra",
+  color: "White",
   moving: false,
 };
 
 function isStopped(car) {
   // TODO YOUR CODE HERE
+  if (!car.moving) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 // We have found everything we need to capture the associate, to make sure they don't elude us we want to make sure we only capture them when they are at home and their asleep.
@@ -106,4 +108,8 @@ let suspect = {
 
 function attemptCapture(suspect) {
   // TODO YOUR CODE HERE
+  if (suspect.atHome && suspect.asleep) {
+    return true;
+  }
+  return false;
 }
